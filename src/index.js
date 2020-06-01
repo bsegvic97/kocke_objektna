@@ -33,6 +33,7 @@ function moguLiSastavitiRijec(a) {
   let flag = true;
   for (var i = 0; i < a.length; i++) {
     for (var j = 0; j < kutija1.kocke.length; j++) {
+      //provjeravamo dali se svako slovo nalazi na nekoj od kocki, ako se nalazi onda cijelu kocku brisemo tj. stavljamo prazne stringove ( ako sam dobro shvatio nemoze koristiti donju i gornju stranu iste kocke jer bi se tada rijec "BOOK" mogla napisati)
       if (kutija1.kocke[j].donja === a[i]) {
         kutija1.kocke[j].donja = "";
         kutija1.kocke[j].gornja = "";
@@ -42,6 +43,7 @@ function moguLiSastavitiRijec(a) {
         kutija1.kocke[j].gornja = "";
         break;
       }
+      //nismo nasli dano slovo na nijednoj kocki 
       if (j === kutija1.kocke.length - 1) flag = false;
     }
     if (!flag) break;
